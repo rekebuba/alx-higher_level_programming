@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-word = "abcdefghijklmnopqrstuvwxyz"
-for char in word:
-    if char != 'q' and char != 'e':
-        print(char, end ="")
+for i in range(97, 123):
+    if i != 101 and i != 113:
+        print("{}".format(chr(i)), end ="")

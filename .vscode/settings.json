@@ -2,5 +2,8 @@
     "cSpell.words": [
         "listint",
         "nodeint"
-    ]
+    ],
+    "files.associations": {
+        "lists.h": "c"
+    }
 }

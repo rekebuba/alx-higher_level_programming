@@ -25,4 +25,3 @@ if __name__ == '__main__':
     result = operators[sign](int(a), int(b))
 
     print('{} {} {} = {}'.format(a, sign, b, result))
-

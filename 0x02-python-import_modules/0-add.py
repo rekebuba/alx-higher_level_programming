@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-import importlib.util
+if __name__ == '__main__':
+    from add_0 import add
 
-file_path = 'add_0.py'
-
-spec = importlib.util.spec_from_file_location('add_0', file_path)
-module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(module)
-a = 1
-b = 2
-print("{} + {} = {}".format(a, b, module.add(a, b)))
+    a = 1
+    b = 2
+    print("{} + {} = {}".format(a, b, add(a, b)))

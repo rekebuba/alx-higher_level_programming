@@ -3,6 +3,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <python.h>
+#include <listobject.h>
+#include <object.h>
 /**
  * struct listint_s - singly linked list
  * @n: integer
@@ -24,5 +27,12 @@ void free_listint(listint_t *head);
 int is_palindrome(listint_t **head);
 
 void reverse_node(listint_t **head);
+
+typedef struct _object {
+    Py_ssize_t ob_refcnt;
+    struct _typeobject *ob_type;
+} PyObject;
+
+void print_python_list_info(PyObject *p);
 
 #endif /* LISTS_H */

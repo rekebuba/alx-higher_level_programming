@@ -11,9 +11,10 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *ptr = *head;
-	listint_t *new_node = NULL;
-	listint_t *current = NULL;
+	listint_t *ptr = *head, *new_node = NULL, *current = NULL;
+
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
 /* creating a new node */
 	while (ptr != NULL)
 	{
@@ -33,7 +34,6 @@ int is_palindrome(listint_t **head)
 		}
 		ptr = ptr->next;
 	}
-
 	reverse_node(&new_node);
 
 	listint_t *ptr1 = *head;

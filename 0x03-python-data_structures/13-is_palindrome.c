@@ -1,6 +1,27 @@
 #include "lists.h"
 
 /**
+ * reverse_node - reverse a node
+ * @head: the linked list need to be reversed
+ * Return: void
+ */
+void reverse_node(listint_t **head)
+{
+	listint_t *new_node = *head;
+	listint_t *temp1 = NULL;
+	listint_t *temp2;
+
+	while (new_node != NULL)
+	{
+		temp2 = new_node->next;
+		new_node->next = temp1;
+		temp1 = new_node;
+		new_node = temp2;
+	}
+	*head = temp1;
+}
+
+/**
  * is_palindrome - checks if a liked list is a palindrome
  * @head: a pointer to a linked list
  * the approach i fallowed is that
@@ -48,25 +69,4 @@ int is_palindrome(listint_t **head)
 		ptr2 = ptr2->next;
 	}
 	return (1);
-}
-
-/**
- * reverse_node - reverse a node
- * @head: the linked list need to be reversed
- * Return: void
- */
-void reverse_node(listint_t **head)
-{
-	listint_t *new_node = *head;
-	listint_t *temp1 = NULL;
-	listint_t *temp2;
-
-	while (new_node != NULL)
-	{
-		temp2 = new_node->next;
-		new_node->next = temp1;
-		temp1 = new_node;
-		new_node = temp2;
-	}
-	*head = temp1;
 }

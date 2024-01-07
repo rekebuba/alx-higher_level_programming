@@ -12,14 +12,13 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *ptr = *head, *new_node = NULL, *current = NULL;
+	listint_t *node = *head;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 /* creating a new node */
 	while (ptr != NULL)
 	{
-		listint_t *node = malloc(sizeof(listint_t));
-
 		node->n = ptr->n;
 		node->next = NULL;
 		if (new_node == NULL)
@@ -43,13 +42,11 @@ int is_palindrome(listint_t **head)
 	{
 		if (ptr1->n != ptr2->n)
 		{
-			free_listint(new_node);
 			return (0);
 		}
 		ptr1 = ptr1->next;
 		ptr2 = ptr2->next;
 	}
-	free_listint(new_node);
 	return (1);
 }
 

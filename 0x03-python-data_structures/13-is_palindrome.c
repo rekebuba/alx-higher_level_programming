@@ -38,7 +38,7 @@ int is_palindrome(listint_t **head)
 	listint_t *ptr1 = *head;
 	listint_t *ptr2 = new_node;
 
-	while (ptr1 != NULL)
+	while (ptr1 && ptr2)
 	{
 		if (ptr1->n != ptr2->n)
 		{

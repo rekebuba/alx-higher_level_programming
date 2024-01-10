@@ -6,8 +6,7 @@ def weight_average(my_list=[]):
 
     total = 0
     last_values = 0
-    
-    add_tuple = lambda x: x[0] * x[1]
+
     for i in my_list:
         total += add_tuple(i)
 
@@ -16,3 +15,7 @@ def weight_average(my_list=[]):
 
     average = total / last_values
     return average
+
+
+def add_tuple(x):
+    return x[0] * x[1]

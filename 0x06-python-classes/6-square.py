@@ -22,12 +22,13 @@ class Square:
             _type_: self
         """
         return self.__size
+
     @size.setter
     def size(self, value):
         """ the getter part
 
         Args:
-            value : the value passed 
+            value : the value passed
 
         Raises:
             TypeError: if size is not an integer
@@ -39,6 +40,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
+
     @property
     def position(self):
         """ initializing a getter and a setter
@@ -47,6 +49,7 @@ class Square:
             _type_: self.position__position
         """
         return self.__position
+
     @position.setter
     def position(self, value):
         """ the setter part
@@ -58,11 +61,13 @@ class Square:
             TypeError: checks if it is a tuple
             and every tuple is an integer
         """
-        if not isinstance(value, tuple) and not all(isinstance(item, int) for item in value):
-            raise TypeError ("position must be a tuple of 2 positive integers")
+        if not isinstance(value, tuple):
+            if not all(isinstance(item, int) for item in value):
+                raise TypeError("position must be a \
+                                tuple of 2 positive integers")
         else:
             self.__position = value
-    
+
     def area(self):
         """returns the current square area
 

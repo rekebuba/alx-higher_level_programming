@@ -21,12 +21,13 @@ class Square:
             _type_: self.__size
         """
         return self.__size
+
     @size.setter
     def size(self, value):
         """ the setter part
 
         Args:
-            value : the value passed 
+            value : the value passed
 
         Raises:
             TypeError: if size is not an integer

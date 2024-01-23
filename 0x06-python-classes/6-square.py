@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-"""A module containing a square"""
+""" defines a class square """
 
 
 class Square:
-    """A square class"""
+    """
+    it defines a square by: (based on 5-square.py)
+    """
 
     def __init__(self, size=0, position=(0, 0)):
-        """initializes square
+        """private instance attribute size
         Args:
-            size (int): size of the square
-            position (int, int): position of the argument
+            size (int, optional): the size to be squared. Defaults to 0.
         """
 
         self.size = size
@@ -17,20 +18,24 @@ class Square:
 
     @property
     def size(self):
-        """Gets value of size
+        """ initializing a getter and a setter
 
         Returns:
-            size (int)
+            _type_: self
         """
 
         return self.__size
 
     @size.setter
     def size(self, value):
-        """ Change the value of size
+        """ the getter part
 
         Args:
-            value (int): new value of size
+            value : the value passed
+
+        Raises:
+            TypeError: if size is not an integer
+            ValueError: if size is less than 0
         """
 
         if type(value) != int:
@@ -50,15 +55,24 @@ class Square:
 
     @property
     def position(self):
-        """gets the position"""
+        """ initializing a getter and a setter
+
+        Returns:
+            _type_: self.position__position
+        """
 
         return self.__position
 
     @position.setter
     def position(self, value):
-        """change the value of poaition
+        """ the setter part
+
         Args:
-            value (int, int): the new position
+            value : the value passed as a tuple
+
+        Raises:
+            TypeError: checks if it is a tuple
+            and every tuple is an integer
         """
 
         if type(value) != tuple or len(value) != 2:
@@ -70,11 +84,17 @@ class Square:
         self.__position = value
 
     def area(self):
-        a = self.__size * self.__size
-        return a
+        """returns the current square area
+
+        Returns:
+            _type_: square value
+        """
+        return self.__size ** 2
 
     def my_print(self):
-        """Print a square"""
+        """
+        prints in stdout the square with the character #:
+        """
 
         if self.__size == 0:
             print("")

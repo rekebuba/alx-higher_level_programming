@@ -84,9 +84,11 @@ class Square:
         if self.__size == 0:
             print("")
         else:
-            for line in range(self.__position[1]):
+            for line in range(0, self.__position[1]):
                 print()
-            for i in range(self.__size):
-                for space in range(self.__position[0]):
+            for i in range(0, self.__size):
+                for space in range(0, self.__position[0]):
                     print(" ", end="")
-                print("#" * self.__size)
+                for j in range(0, self.__size):
+                    print("#", end="")
+                print()

@@ -3,7 +3,9 @@
 
 
 class Square:
-    
+    """
+    it defines a square by: (based on 3-square.py)
+    """
     def __init__(self, size=0):
         """private instance attribute size
         Args:

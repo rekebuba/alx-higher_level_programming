@@ -30,3 +30,7 @@ Test_cases:
     >>> matrix = [[1, 2, 3], [4, 5, 6]]
     >>> matrix_divided(matrix, 1000e10000)
     [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+    >>> matrix = [[]]
+    >>> matrix_divided(matrix, 2)
+    [[]]

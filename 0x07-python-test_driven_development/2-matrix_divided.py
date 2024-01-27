@@ -1,6 +1,21 @@
 #!/usr/bin/python3
+"""matrix_divider"""
 
 def matrix_divided(matrix, div):
+    """divides a matrix by div
+
+    Args:
+        matrix (int or float)): contains numbers
+        div (int): the value passed to as the divisor
+
+    Raises:
+        TypeError: if row is not list of list or if the items are not int or float
+        ZeroDivisionError: when the divisor(div) is 0
+        TypeError: each row of the matrix must have the same size
+
+    Returns:
+        int: a new matrix
+    """
     if matrix is None:
         return [[]]
 

@@ -1,6 +1,24 @@
 #!/usr/bin/python3
+""" multiply two matrix """
+
 
 def matrix_mul(m_a, m_b):
+    """ multiply two matrix
+
+    Args:
+        m_a (matrix): the first matrix
+        m_b (matrix): the second matrix
+
+    Raises:
+        TypeError: if either is not a list
+        TypeError: if either is not a list of list
+        ValueError: if either is empty
+        TypeError: if not the same size
+        ValueError: if the matrixes can not be multiplied
+
+    Returns:
+        int: a new matrix
+    """
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):

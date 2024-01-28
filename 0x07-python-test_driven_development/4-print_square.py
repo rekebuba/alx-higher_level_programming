@@ -2,6 +2,8 @@
 """
 print a square with # character
 """
+
+
 def print_square(size):
     """a function to print the square
 

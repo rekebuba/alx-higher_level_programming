@@ -9,6 +9,9 @@ print_square(0)
 print("")
 print_square(1)
 print("")
+
+print_square("nan")
+print("")
 try:
     print_square(-1)
 except Exception as e:

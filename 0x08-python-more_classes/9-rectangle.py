@@ -144,6 +144,9 @@ class Rectangle:
 
         Args:
             size (int, optional): size. Defaults to 0.
+
+        Returns:
+            instance: instance
         """
         width = height = size
         return cls(width, height)

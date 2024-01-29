@@ -145,4 +145,5 @@ class Rectangle:
         Args:
             size (int, optional): size. Defaults to 0.
         """
-        return cls(size, size)
+        width = height = size
+        return cls(width, height)

@@ -16,9 +16,9 @@ class Rectangle:
             width (int, optional): the value of the width. Defaults to 0.
             height (int, optional): the value of the height. Defaults to 0.
         """
+        Rectangle.number_of_instances += 1
         self.height = height
         self.width = width
-        Rectangle.number_of_instances += 1
 
     def __str__(self):
         """prints a rectangle with '#' character

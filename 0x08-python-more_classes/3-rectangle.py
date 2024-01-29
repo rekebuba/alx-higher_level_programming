@@ -2,6 +2,8 @@
 """
 computes the area and the parameter of a givin height and width
 """
+
+
 class Rectangle:
     """defines a Rectangle class"""
     def __init__(self, width=0, height=0):
@@ -54,7 +56,7 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-    
+
     @property
     def height(self):
         """property to retrieve it
@@ -88,6 +90,7 @@ class Rectangle:
             int: the value of the area
         """
         return self.__height * self.__width
+
     def perimeter(self):
         """computes the perimeter of a rectangle
 

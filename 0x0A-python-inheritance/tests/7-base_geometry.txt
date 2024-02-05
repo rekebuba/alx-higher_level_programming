@@ -25,14 +25,14 @@ Testing:
     Traceback (most recent call last):
     ValueError: distance must be greater than 0
 
-    >>> bg.integer_validator("distance", -500)
+    >>> bg.integer_validator("abc", -500)
     Traceback (most recent call last):
-    ValueError: distance must be greater than 0
+    ValueError: abc must be greater than 0
 
 
-    >>> bg.integer_validator("distance", -700)
+    >>> bg.integer_validator("def", -700)
     Traceback (most recent call last):
-    ValueError: distance must be greater than 0
+    ValueError: def must be greater than 0
 
     >>> bg.integer_validator("average", 7.8)
     Traceback (most recent call last):

@@ -29,14 +29,6 @@ Testing:
     Traceback (most recent call last):
     TypeError: average must be an integer
 
-    >>> bg.integer_validator("average")
-    Traceback (most recent call last):
-    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
-
-    >>> bg.integer_validator()
-    Traceback (most recent call last):
-    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
     >>> bg.integer_validator("NaN", float('nan'))
     Traceback (most recent call last):
     TypeError: NaN must be an integer

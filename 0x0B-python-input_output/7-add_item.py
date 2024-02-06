@@ -8,15 +8,15 @@ import json
 import os.path
 
 
-save_to_json_file = __import__("7-save_to_json_file").save_to_json_file
-load_from_json_file = __import__("8-load_from_json_file").load_from_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
 
 filename = "add_item.json"
 args = sys.argv
 my_list = []
-if os.path.exists(filename) and os.path.getsize(filename) > 0:
-    my_list = load_from_json_file(filename)
+
+my_list = load_from_json_file(filename)
 
 for elem in sys.argv[1:]:
     my_list.append(elem)

@@ -64,3 +64,4 @@ class TestForm(unittest.TestCase):
             result = "[Rectangle] (89) 10/10 - 10/10\n[Rectangle] (89) 10/10 - 2/10\n[Rectangle] (89) 10/10 - 2/3\n[Rectangle] (89) 4/10 - 2/3\n[Rectangle] (89) 4/5 - 2/3"
             output = mock_stdout.getvalue().strip()
             self.assertEqual(output, result)
+    

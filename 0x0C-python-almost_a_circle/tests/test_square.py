@@ -24,11 +24,11 @@ class TestForm(unittest.TestCase):
     def test_square_error(self):
         """ tests errors """
         self.assertRaises(TypeError, lambda: Square("120", 1), msg="width must be an integer")
-        self.assertRaises(TypeError, lambda: Square(-120, -2), msg="width must be > 0")
-        self.assertRaises(TypeError, lambda: Square(120, 2, -2), msg="x must be >= 0")
-        self.assertRaises(TypeError, lambda: Square(120, 2, 2, -2), msg="y must be >= 0")
-        self.assertRaises(TypeError, lambda: Square(120, 1, "hi"), msg="x must be an integer")
-        self.assertRaises(TypeError, lambda: Square(120, 1, 5, "hi"), msg="y must be an integer")
+        self.assertRaises(ValueError, lambda: Square(-120, -2), msg="width must be > 0")
+        self.assertRaises(ValueError, lambda: Square(120, -2), msg="x must be >= 0")
+        self.assertRaises(ValueError, lambda: Square(120, 2, -2), msg="y must be >= 0")
+        self.assertRaises(TypeError, lambda: Square(120, "hi"), msg="x must be an integer")
+        self.assertRaises(TypeError, lambda: Square(120, 5, "hi"), msg="y must be an integer")
 
     def test_square_display1(self):
         """ test output """

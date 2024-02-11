@@ -63,6 +63,7 @@ class Base:
         """ a Class method that returns a list of instances """
         result = []
         filename = cls.__name__ + ".json"
+
         if os.path.exists(filename):
             with open(filename, "r") as file:
                 my_lists = cls.from_json_string(file.read())
@@ -72,13 +73,16 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """ saving or serialization of the list_objs to CSV file """
         list_objs = [list_obj.to_dictionary() for list_obj in list_objs]
         filename = cls.__name__ + ".csv"
+
         with open(filename, "w") as f:
             if cls.__name__ == 'Rectangle':
                 fields = ['id', 'width', 'height', 'x', 'y']
             elif cls.__name__ == 'Square':
                 fields = ['id', 'size', 'x', 'y']
+
             writer = csv.DictWriter(f, fieldnames=fields)
             writer.writeheader()
             writer.writerows(list_objs)
@@ -86,8 +90,10 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """ loading or deserialization of the list_objs from CSV file """
         filename = cls.__name__ + ".csv"
         my_list = []
+
         if os.path.exists(filename):
             with open(filename, "r") as f:
                 reader = csv.DictReader(f)

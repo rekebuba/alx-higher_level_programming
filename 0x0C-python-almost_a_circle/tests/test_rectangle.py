@@ -44,10 +44,10 @@ class TestForm(unittest.TestCase):
         """ tests errors """
         self.assertRaises(TypeError, lambda: Rectangle(120, "1"), msg="height must be an integer")
         self.assertRaises(TypeError, lambda: Rectangle("120", 1), msg="width must be an integer")
-        self.assertRaises(TypeError, lambda: Rectangle(120, -2), msg="height must be > 0")
-        self.assertRaises(TypeError, lambda: Rectangle(-120, -2), msg="width must be > 0")
-        self.assertRaises(TypeError, lambda: Rectangle(120, 2, -2), msg="x must be >= 0")
-        self.assertRaises(TypeError, lambda: Rectangle(120, 2, 2, -2), msg="y must be >= 0")
+        self.assertRaises(ValueError, lambda: Rectangle(120, -2), msg="height must be > 0")
+        self.assertRaises(ValueError, lambda: Rectangle(-120, -2), msg="width must be > 0")
+        self.assertRaises(ValueError, lambda: Rectangle(120, 2, -2), msg="x must be >= 0")
+        self.assertRaises(ValueError, lambda: Rectangle(120, 2, 2, -2), msg="y must be >= 0")
         self.assertRaises(TypeError, lambda: Rectangle(120, 1, "hi"), msg="x must be an integer")
         self.assertRaises(TypeError, lambda: Rectangle(120, 1, 5, "hi"), msg="y must be an integer")
 

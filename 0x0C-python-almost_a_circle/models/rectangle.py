@@ -3,6 +3,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -85,28 +86,31 @@ class Rectangle(Base):
             print(f"{gap}{char}")
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} \
+- {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
-        """ 
+        """
         Update the class Rectangle by adding the public method
         assigning an argument to each attribute:
         """
-        l = len(args)
-        if l == 0:
+        length = len(args)
+        if length == 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
         else:
-            if l > 5:
+            if length > 5:
                 raise IndexError("tuple index out of range")
 
             attribute_names = ['id', 'width', 'height', 'x', 'y']
 
-            for i in range(l):
+            for i in range(length):
                 setattr(self, attribute_names[i], args[i])
 
     def to_dictionary(self):
         """ returns the dictionary representation of a Rectangle """
-        my_dict = {'id': self.id, 'width': self.__width,
-                    'height': self.__height, 'x': self.__x, 'y': self.__y}
+        my_dict = {
+            'id': self.id, 'width': self.__width,
+            'height': self.__height, 'x': self.__x, 'y': self.__y
+            }
         return my_dict

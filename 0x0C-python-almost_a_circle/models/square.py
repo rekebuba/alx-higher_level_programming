@@ -35,25 +35,27 @@ class Square(Rectangle):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.__width}"
 
     def update(self, *args, **kwargs):
-            """ 
-            Update the class Rectangle by adding the public method
-            assigning an argument to each attribute:
-            """
-            l = len(args)
-            if l == 0:
-                for key, value in kwargs.items():
-                    setattr(self, key, value)
-            else:
-                if l > 5:
-                    raise IndexError("tuple index out of range")
+        """
+        Update the class Rectangle by adding the public method
+        assigning an argument to each attribute:
+        """
+        length = len(args)
+        if length == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        else:
+            if length > 5:
+                raise IndexError("tuple index out of range")
 
-                attribute_names = ['id', 'size', 'x', 'y']
+            attribute_names = ['id', 'size', 'x', 'y']
 
-                for i in range(l):
-                    setattr(self, attribute_names[i], args[i])
+            for i in range(length):
+                setattr(self, attribute_names[i], args[i])
 
     def to_dictionary(self):
-        """ returns the dictionary representation of a Rectangle """
-        my_dict = {'id': self.id, 'size': self.__width,
-                    'x': self.x, 'y': self.y}
+        """ returns the dictionary representation of a Square """
+        my_dict = {
+            'id': self.id, 'size': self.__width,
+            'x': self.x, 'y': self.y
+            }
         return my_dict

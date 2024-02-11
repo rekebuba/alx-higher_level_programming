@@ -42,14 +42,14 @@ class TestForm(unittest.TestCase):
 
     def test_rectangle_error(self):
         """ tests errors """
-        self.assertRaises(TypeError, lambda: Rectangle(120, "1"), msg="height must be an integer")
-        self.assertRaises(TypeError, lambda: Rectangle("120", 1), msg="width must be an integer")
-        self.assertRaises(ValueError, lambda: Rectangle(120, -2), msg="height must be > 0")
-        self.assertRaises(ValueError, lambda: Rectangle(-120, -2), msg="width must be > 0")
-        self.assertRaises(ValueError, lambda: Rectangle(120, 2, -2), msg="x must be >= 0")
-        self.assertRaises(ValueError, lambda: Rectangle(120, 2, 2, -2), msg="y must be >= 0")
-        self.assertRaises(TypeError, lambda: Rectangle(120, 1, "hi"), msg="x must be an integer")
-        self.assertRaises(TypeError, lambda: Rectangle(120, 1, 5, "hi"), msg="y must be an integer")
+        self.assertRaisesRegex(TypeError, "height must be an integer", lambda: Rectangle(120, "1"))
+        self.assertRaisesRegex(TypeError, "width must be an integer", lambda: Rectangle("120", 1))
+        self.assertRaisesRegex(ValueError, "height must be > 0", lambda: Rectangle(120, -2))
+        self.assertRaisesRegex(ValueError, "width must be > 0", lambda: Rectangle(-12, 2))
+        self.assertRaisesRegex(ValueError, "x must be >= 0", lambda: Rectangle(120, 2, -2))
+        self.assertRaisesRegex(ValueError, "y must be >= 0", lambda: Rectangle(120, 2, 2, -2))
+        self.assertRaisesRegex(TypeError, "x must be an integer", lambda: Rectangle(120, 1, x="hi"))
+        self.assertRaisesRegex(TypeError, "y must be an integer", lambda: Rectangle(120, 1, 5, y="hi"))
 
     def test_rectangle_display1(self):
         """ test for correct output printed in stdio """
@@ -141,3 +141,6 @@ class TestForm(unittest.TestCase):
         r.update(**r_dict)
         result = "[Rectangle] (2) 1/9 - 10/2"
         self.assertEqual(str(r), result)
+
+if __name__ == '__main__':
+    unittest.main()

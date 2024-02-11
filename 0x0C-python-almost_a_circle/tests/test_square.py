@@ -23,12 +23,12 @@ class TestForm(unittest.TestCase):
 
     def test_square_error(self):
         """ tests errors """
-        self.assertRaises(TypeError, lambda: Square("120", 1), msg="width must be an integer")
-        self.assertRaises(ValueError, lambda: Square(-120, -2), msg="width must be > 0")
-        self.assertRaises(ValueError, lambda: Square(120, -2), msg="x must be >= 0")
-        self.assertRaises(ValueError, lambda: Square(120, 2, -2), msg="y must be >= 0")
-        self.assertRaises(TypeError, lambda: Square(120, "hi"), msg="x must be an integer")
-        self.assertRaises(TypeError, lambda: Square(120, 5, "hi"), msg="y must be an integer")
+        self.assertRaisesRegex(TypeError, "width must be an integer", lambda: Square("120", 1))
+        self.assertRaisesRegex(ValueError, "width must be > 0", lambda: Square(-12, 2))
+        self.assertRaisesRegex(ValueError, "x must be >= 0", lambda: Square(120, -2))
+        self.assertRaisesRegex(ValueError, "y must be >= 0", lambda: Square(120, 2, -2))
+        self.assertRaisesRegex(TypeError, "x must be an integer", lambda: Square(120, x="hi"))
+        self.assertRaisesRegex(TypeError, "y must be an integer", lambda: Square(120, 5, y="hi"))
 
     def test_square_display1(self):
         """ test output """
@@ -110,3 +110,5 @@ class TestForm(unittest.TestCase):
         r.update(**r_dict)
         result = "[Square] (2) 1/0 - 1"
         self.assertEqual(str(r), result)
+if __name__ == '__main__':
+    unittest.main()

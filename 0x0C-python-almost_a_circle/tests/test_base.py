@@ -99,3 +99,6 @@ class TestForm(unittest.TestCase):
         for i, rect in enumerate(list_rectangles_output):
             self.assertEqual(str(rect), result[i])
             self.assertNotEqual(id(rect), r_id[i])
+
+if __name__ == '__main__':
+    unittest.main()

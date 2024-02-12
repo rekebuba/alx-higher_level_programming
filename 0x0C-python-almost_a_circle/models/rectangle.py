@@ -5,6 +5,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """ Rectangle class that inherits from Base Class """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
@@ -86,6 +87,7 @@ class Rectangle(Base):
             print(f"{gap}{char}")
 
     def __str__(self):
+        """ Returns a string representation of a Rectangle instance. """
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} \
 - {self.__width}/{self.__height}"
 

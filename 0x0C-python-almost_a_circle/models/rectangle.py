@@ -97,10 +97,7 @@ class Rectangle(Base):
         assigning an argument to each attribute:
         """
         length = len(args)
-        if length == 0:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
-        else:
+        if args is not None and length != 0:
             if length > 5:
                 raise IndexError("tuple index out of range")
 
@@ -108,6 +105,9 @@ class Rectangle(Base):
 
             for i in range(length):
                 setattr(self, attribute_names[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """ returns the dictionary representation of a Rectangle """

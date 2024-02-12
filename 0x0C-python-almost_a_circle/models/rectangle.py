@@ -98,13 +98,11 @@ class Rectangle(Base):
         """
         length = len(args)
         if args is not None and length != 0:
-            if length > 5:
-                raise IndexError("tuple index out of range")
+            if length <= 5 and length > 0:
+                attribute_names = ['id', 'width', 'height', 'x', 'y']
 
-            attribute_names = ['id', 'width', 'height', 'x', 'y']
-
-            for i in range(length):
-                setattr(self, attribute_names[i], args[i])
+                for i in range(length):
+                    setattr(self, attribute_names[i], args[i])
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
